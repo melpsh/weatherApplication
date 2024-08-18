@@ -1,3 +1,4 @@
 export default interface IBtnGroup {
-   children:React.ReactNode
+   children:React.ReactNode,
+   className?: string;
 }[]
