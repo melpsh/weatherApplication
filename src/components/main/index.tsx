@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-
 import mainStore from "../../stores/homeStore.ts";
 
 const Main = () => {
@@ -11,27 +10,27 @@ const Main = () => {
   const time = store.weatherInfo?.date.substring(11, 16);
 
   return (
-    <div className="mt-5">
+    <div className="mt-5 p-4 rounded-lg shadow-md bg-blue-50">
       <div className="flex justify-around items-center">
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 1.5 }}
-          className="font-bold text-4xl"
+          className="font-bold text-4xl text-blue-600"
         >
-          
-          <span className="text-xl"> {store.weatherInfo?.temp}&#176;c</span>
+          <span className="text-xl">{store.weatherInfo?.temp}&#176;C</span>
         </motion.span>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 1 }}
-          className="cityName"
+          className="cityName text-center"
         >
-          <h1 className="font-bold text-4xl">{store.weatherInfo?.cityName}</h1>
-          <small className="flex justify-between">
+          <h1 className="font-bold text-4xl text-blue-800">
+            {store.weatherInfo?.cityName}
+          </h1>
+          <small className="flex justify-between text-sm text-blue-600 mt-2">
             <span className="time">{time}</span>
-            {/* <span className="date">Friday Jan 9</span> */}
             <span className="date">
               {y}/{m}/{d}
             </span>
@@ -46,13 +45,13 @@ const Main = () => {
           {store.weatherInfo?.icon ? (
             <img
               src={store.weatherInfo?.icon}
-              alt="weatherImg"
-              className="w-9"
+              alt="Weather Icon"
+              className="w-12 h-12"
             />
           ) : (
-            ""
+            <div className="w-12 h-12 bg-gray-200 rounded-full"></div>
           )}
-          <span className="condition text-xs">
+          <span className="condition text-xs text-blue-700 mt-2">
             {store.weatherInfo?.conditionOutput}
           </span>
         </motion.div>
