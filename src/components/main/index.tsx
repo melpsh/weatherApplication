@@ -10,13 +10,13 @@ const Main = () => {
   const time = store.weatherInfo?.date.substring(11, 16);
 
   return (
-    <div className="mt-5 p-4 rounded-lg shadow-md bg-blue-50">
+    <div className="mt-5 p-4 rounded-lg shadow-md bg-white bg-opacity-60 backdrop-blur-sm">
       <div className="flex justify-around items-center">
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 1.5 }}
-          className="font-bold text-4xl text-blue-600"
+          className="font-bold text-4xl text-gray-800"
         >
           <span className="text-xl">{store.weatherInfo?.temp}&#176;C</span>
         </motion.span>
@@ -26,10 +26,10 @@ const Main = () => {
           transition={{ duration: 2, delay: 1 }}
           className="cityName text-center"
         >
-          <h1 className="font-bold text-4xl text-blue-800">
+          <h1 className="font-bold text-4xl text-gray-900">
             {store.weatherInfo?.cityName}
           </h1>
-          <small className="flex justify-between text-sm text-blue-600 mt-2">
+          <small className="flex justify-between text-sm text-gray-700 mt-2">
             <span className="time">{time}</span>
             <span className="date">
               {y}/{m}/{d}
@@ -51,7 +51,7 @@ const Main = () => {
           ) : (
             <div className="w-12 h-12 bg-gray-200 rounded-full"></div>
           )}
-          <span className="condition text-xs text-blue-700 mt-2">
+          <span className="condition text-xs text-gray-800 mt-2">
             {store.weatherInfo?.conditionOutput}
           </span>
         </motion.div>

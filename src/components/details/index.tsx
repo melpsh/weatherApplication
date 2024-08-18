@@ -23,23 +23,31 @@ const Details = () => {
         transition={{ duration: 1, delay: 1.9 }}
         className="flex flex-col gap-y-3 w-full"
       >
-        <h4 className="font-bold text-xl text-blue-600 text-center">Details</h4>
-        <div className="flex justify-around text-sm w-full p-4 bg-blue-100 rounded-lg shadow-md">
+        <h4 className="font-bold text-xl text-gray-700 text-center">Details</h4>
+        <div className="flex justify-around text-sm w-full p-4 bg-white bg-opacity-60 rounded-lg shadow-md backdrop-blur-sm">
           <li className="flex flex-col justify-center items-center">
-            <span className="font-medium">Feels Like:</span>
-            <span className="text-lg">{store.weatherInfo?.feelslike}&#176;</span>
+            <span className="font-medium text-gray-800">Feels Like:</span>
+            <span className="text-lg text-gray-900">
+              {store.weatherInfo?.feelslike}&#176;
+            </span>
           </li>
           <li className="flex flex-col justify-center items-center">
-            <span className="font-medium">Cloud:</span>
-            <span className="text-lg">{store.weatherInfo?.cloud}%</span>
+            <span className="font-medium text-gray-800">Cloud:</span>
+            <span className="text-lg text-gray-900">
+              {store.weatherInfo?.cloud}%
+            </span>
           </li>
           <li className="flex flex-col justify-center items-center">
-            <span className="font-medium">Wind:</span>
-            <span className="text-lg">{store.weatherInfo?.wind} km/h</span>
+            <span className="font-medium text-gray-800">Wind:</span>
+            <span className="text-lg text-gray-900">
+              {store.weatherInfo?.wind} km/h
+            </span>
           </li>
           <li className="flex flex-col justify-center items-center">
-            <span className="font-medium">Humidity:</span>
-            <span className="text-lg">{store.weatherInfo?.humidity}%</span>
+            <span className="font-medium text-gray-800">Humidity:</span>
+            <span className="text-lg text-gray-900">
+              {store.weatherInfo?.humidity}%
+            </span>
           </li>
         </div>
       </motion.ul>
@@ -54,10 +62,10 @@ const Details = () => {
             <button
               onClick={(e) => store.getIdElement(e)}
               id="hour"
-              className={`text-sm px-3 py-1 rounded-md hover:bg-blue-700 hover:text-white transition-colors duration-300 ${
+              className={`text-sm px-3 py-1 rounded-md transition-colors duration-300 ${
                 store.currentEleID === "hour"
-                  ? "text-white bg-blue-600"
-                  : "text-blue-600 bg-blue-100"
+                  ? "text-white bg-gray-800"
+                  : "text-gray-700 bg-white bg-opacity-60"
               }`}
             >
               Hourly
@@ -65,16 +73,16 @@ const Details = () => {
             <button
               id="daily"
               onClick={(e) => store.getIdElement(e)}
-              className={`text-sm px-3 py-1 rounded-md hover:bg-blue-700 hover:text-white transition-colors duration-300 ${
+              className={`text-sm px-3 py-1 rounded-md transition-colors duration-300 ${
                 store.currentEleID === "daily"
-                  ? "text-white bg-blue-600"
-                  : "text-blue-600 bg-blue-100"
+                  ? "text-white bg-gray-800"
+                  : "text-gray-700 bg-white bg-opacity-60"
               }`}
             >
               Daily
             </button>
           </ButtonGroup>
-          <div className="info w-full h-[10rem] border border-blue-200 rounded-lg mt-4 p-4 bg-blue-50">
+          <div className="info w-full h-[10rem] border border-gray-200 rounded-lg mt-4 p-4 bg-white bg-opacity-50 backdrop-blur-sm">
             {store.currentEleID === "hour" && (
               <div className="w-full flex h-full gap-2 overflow-x-auto">
                 {forcastHour.map((item, index) => (
