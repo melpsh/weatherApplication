@@ -89,12 +89,15 @@ const mainStore = create<IPromise>((set, getState) => ({
       if (currentTimeInLocation > 19) {
         const loggg = data.forecast.forecastday[1].hour[0];
         console.log(loggg);
+        console.log('Starting map function');
         hoursDataForNextDay = data.forecast.forecastday[1].hour.map(
           (item: any) => {
+            console.log('Map function hit');
             let iconUrl = item.condition.icon;
             if (iconUrl.startsWith("//")) {
               iconUrl = `https:${iconUrl}`;
             }
+            console.log('Transformed Icon URL:', iconUrl);
             return {
               wind: item.wind_kph,
               time: item.time,
@@ -107,12 +110,16 @@ const mainStore = create<IPromise>((set, getState) => ({
         );
       }
       let hoursData = data.forecast.forecastday[0].hour.map((item: any) => {
+        let iconUrl = item.condition.icon;
+            if (iconUrl.startsWith("//")) {
+              iconUrl = `https:${iconUrl}`;
+            }
         return {
           wind: item.wind_kph,
           time: item.time,
           temp_c: item.temp_c,
           text: item.condition.text,
-          icon: item.condition.icon,
+          icon: iconUrl,
           humidity: item.humidity,
         };
       });
@@ -120,6 +127,10 @@ const mainStore = create<IPromise>((set, getState) => ({
         hoursData = [...hoursData, ...hoursDataForNextDay];
       }
 
+      let iconUrl = response.data.current.condition.icon;
+      if (iconUrl.startsWith("//")) {
+        iconUrl = `https:${iconUrl}`;
+      }
       const info: IPromise["weatherInfo"] = {
         cloud: data.current.cloud,
         wind: data.current.wind_kph,
@@ -127,7 +138,7 @@ const mainStore = create<IPromise>((set, getState) => ({
         conditionOutput: data.current.condition.text,
         date: data.location.localtime,
         cityName: data.location.name,
-        icon: response.data.current.condition.icon,
+        icon: iconUrl,
         humidity: data.current.humidity,
         feelslike: data.current.feelslike_c,
       };

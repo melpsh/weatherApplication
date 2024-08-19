@@ -12,8 +12,6 @@ const Details = () => {
     parseInt(store.currentHour) + 6
   );
 
-  console.log("forrrrrca",forcastHour);
-
   return (
     <div className="flex flex-col items-center mt-5 w-full max-w-4xl mx-auto">
       <div className="relative w-full">
@@ -80,7 +78,7 @@ const Details = () => {
             {store.currentEleID === "hour" && (
               <div className="w-full flex h-full gap-2 p-2">
                 {forcastHour.map((item, index) => {
-                  console.log('itemmmmmmm',item.icon);
+                  console.log('itemmmmmm',item.icon);
                   return (
                     <HourlyDetail
                     key={index}
