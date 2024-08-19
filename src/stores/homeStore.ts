@@ -15,7 +15,7 @@ const mainStore = create<IPromise>((set, getState) => ({
 
   // vaiables
   weatherInfo: null,
-  cityLocation: 'Vancouver',
+  cityLocation: 'Tehran',
   inputCityLocation: '',
   urlImg: '',
   bgBlack: false,
