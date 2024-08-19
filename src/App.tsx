@@ -25,7 +25,7 @@ if (store.is_error) {
       transition={{ duration: 0.1 }}
       className={`${
         store.bgBlack ? "text-black" : "text-white"
-      } w-screen h-screen bg-cover  bg-no-repeat  relative flex flex-col`}
+      } w-screen h-screen bg-cover bg-center  bg-no-repeat  relative flex flex-col`}
       style={{ backgroundImage: `url(${store.urlImg})` }}
     >
       <h1 className="mt-10 text-blue-400 font-bold text-xl tracking-wider flex justify-center">
