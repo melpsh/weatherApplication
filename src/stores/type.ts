@@ -35,7 +35,7 @@ export interface IPromise {
   }[],
 
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
-  onSubmitSearchBtn: (e: React.FormEvent<HTMLButtonElement>) => void,
+  onSubmitSearchBtn: (e: React.FormEvent<HTMLButtonElement> | React.FormEvent<HTMLButtonElement>) => void,
   onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
   getIdElement: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
   getWeekday: (dateEpoch: number) => string,

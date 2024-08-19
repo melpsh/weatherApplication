@@ -1,10 +1,8 @@
 import IBtnGroup from "./type";
 
-const ButtonGroup = ({ children, className = "" }: IBtnGroup) => {
+const ButtonGroup = ({ children }: IBtnGroup) => {
   return (
-    <div
-      className={`bg-blue-400 flex gap-2 p-2 rounded-lg ${className} hover:bg-blue-500 transition duration-200 ease-in-out`}
-    >
+    <div className="flex gap-2 p-4 bg-blue-400/80 backdrop-blur-sm rounded-lg shadow-lg">
       {children}
     </div>
   );
