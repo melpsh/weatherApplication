@@ -78,6 +78,8 @@ const mainStore = create<IPromise>((set, getState) => ({
 
       let currentTimeInLocation = parseInt(data.location.localtime.slice(11, 13))
       if (currentTimeInLocation > 19) {
+        const loggg = data.forecast.forecastday[1].hour[0];
+        console.log(loggg);
         hoursDataForNextDay = data.forecast.forecastday[1].hour.map((item: any) => {
           return {
             wind: item.wind_kph,

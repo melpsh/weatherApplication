@@ -29,7 +29,7 @@ if (store.is_error) {
       style={{ backgroundImage: `url(${store.urlImg})` }}
     >
       <h1 className="mt-10 text-blue-400 font-bold text-xl tracking-wider flex justify-center">
-        Weather App
+        
       </h1>
       <Main />
       <Details />

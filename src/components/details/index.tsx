@@ -12,6 +12,8 @@ const Details = () => {
     parseInt(store.currentHour) + 6
   );
 
+  console.log("forrrrrca",forcastHour);
+
   return (
     <div className="flex flex-col items-center mt-5 w-full max-w-4xl mx-auto">
       <div className="relative w-full">
@@ -23,7 +25,7 @@ const Details = () => {
         transition={{ duration: 1, delay: 1.9 }}
         className="flex flex-col gap-y-2 mt-4 w-full"
       >
-        <h4 className="font-bold text-xl text-blue-400 text-center">Details</h4>
+        <h4 className="font-bold text-xl text-white text-center">Details</h4>
         <div className="flex justify-around text-sm text-white bg-blue-00/70 backdrop-blur-md p-4 rounded-lg shadow-md">
           <li className="flex flex-col justify-center items-center">
             <span className="font-medium">Feels Like:</span>
@@ -78,13 +80,14 @@ const Details = () => {
             {store.currentEleID === "hour" && (
               <div className="w-full flex h-full gap-2 p-2">
                 {forcastHour.map((item, index) => {
+                  console.log('itemmmmmmm',item.icon);
                   return (
                     <HourlyDetail
-                      key={index}
-                      time={item.time.slice(11, 13)}
-                      icon={item.icon}
-                      temp_c={item.temp_c}
-                      humidity={item.humidity}
+                    key={index}
+                    time={item.time.slice(11, 13)}
+                    icon={item.icon}
+                    temp_c={item.temp_c}
+                    humidity={item.humidity}
                     />
                   );
                 })}
