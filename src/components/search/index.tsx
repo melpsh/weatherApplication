@@ -5,9 +5,9 @@ import { FormEvent } from "react";
 const SearchCityName = () => {
   const store = mainStore();
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
-    // store.onSubmitSearchBtn(e);
+    store.onSubmitSearchBtn(e);
   };
 
   return (
