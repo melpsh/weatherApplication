@@ -1,13 +1,19 @@
 import { CiSearch } from "react-icons/ci";
 import mainStore from "../../stores/homeStore";
+import { FormEvent } from "react";
 
 const SearchCityName = () => {
   const store = mainStore();
 
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // store.onSubmitSearchBtn(e);
+  };
+
   return (
     <form 
       className="relative flex items-center w-full max-w-md mx-auto"
-      onSubmit={(e) => { store.onSubmitSearchBtn(e) }}
+      onSubmit={handleSubmit}
     >
       <input
         autoFocus

@@ -11,7 +11,7 @@ const Main = () => {
 
   return (
     <div className="mt-5">
-      <div className="flex flex-col md:flex-row justify-around items-center text-white bg-blue-600/70 backdrop-blur-md p-5 rounded-lg shadow-lg">
+      <div className="flex flex-col md:flex-row justify-around items-center text-white bg-blue-0/70 backdrop-blur-md p-5 rounded-lg shadow-lg">
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
