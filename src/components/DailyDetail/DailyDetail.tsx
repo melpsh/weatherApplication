@@ -5,7 +5,7 @@ const DailyDetail = ({ weekDay, icon, temp_l, temp_h }: IDailyDetail) => {
   const store = mainStore();
   const dayOfWeek = store.getWeekday(weekDay);
   return (
-    <div className="text-sm w-1/3 bg-blue-600/70 backdrop-blur-md flex flex-col justify-around items-center h-full p-4 rounded-lg shadow-md text-white">
+    <div className="text-sm w-1/3 bg-blue-00/70 backdrop-blur-md flex flex-col justify-around items-center h-full p-4 rounded-lg shadow-md text-black">
       <span className="font-semibold">{dayOfWeek}</span>
       <img src={icon} alt="icon_condition" className="w-12 h-12 my-2" />
       <div className="flex justify-between w-full px-2">

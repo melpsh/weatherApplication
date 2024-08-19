@@ -24,7 +24,7 @@ const Details = () => {
         className="flex flex-col gap-y-2 mt-4 w-full"
       >
         <h4 className="font-bold text-xl text-blue-400 text-center">Details</h4>
-        <div className="flex justify-around text-sm text-white bg-blue-600/70 backdrop-blur-md p-4 rounded-lg shadow-md">
+        <div className="flex justify-around text-sm text-white bg-blue-00/70 backdrop-blur-md p-4 rounded-lg shadow-md">
           <li className="flex flex-col justify-center items-center">
             <span className="font-medium">Feels Like:</span>
             <span>{store.weatherInfo?.feelslike}&#176;</span>
