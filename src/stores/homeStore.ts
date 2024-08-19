@@ -30,7 +30,7 @@ const mainStore = create<IPromise>((set, getState) => ({
     set({ inputCityLocation: cityName })
   },
 
-  onSubmitSearchBtn: (e) => {
+  onSubmitSearchBtn: (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const name = getState().inputCityLocation
     set({ cityLocation: name, inputCityLocation: '' })
