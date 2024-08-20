@@ -9,6 +9,8 @@ const Main = () => {
   const d = store.weatherInfo?.date.substring(8, 11);
   const time = store.weatherInfo?.date.substring(11, 16);
 
+  console.log('Whether infooooo',store.weatherInfo);
+
   return (
     <div className="mt-5">
       <div className="flex flex-col md:flex-row justify-around items-center text-white bg-blue-0/70 backdrop-blur-md p-5 rounded-lg shadow-lg">
@@ -34,7 +36,7 @@ const Main = () => {
           <small className="flex justify-between text-sm md:text-base mt-2">
             <span className="time">{time}</span>
             <span className="date">
-              {y}/{m}/{d}
+              {y}/{m}/{d} 
             </span>
           </small>
         </motion.div>
@@ -53,7 +55,7 @@ const Main = () => {
           ) : (
             ""
           )}
-          <span className="condition text-sm md:text-base">
+          <span className="condition text-sm md:text-base text-xl">
             {store.weatherInfo?.conditionOutput}
           </span>
         </motion.div>

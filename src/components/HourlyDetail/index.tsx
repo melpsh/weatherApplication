@@ -2,7 +2,7 @@ import IHourlyDetail from "./type";
 
 const HourlyDetail = ({ time, icon, temp_c, humidity }: IHourlyDetail) => {
   return (
-    <div className="text-sm w-1/5 bg--00/70 backdrop-blur-md flex flex-col justify-around items-center h-full p-3 rounded-lg shadow-md text-black">
+    <div className="hourly-details text-sm w-1/5 bg-white/10 backdrop-blur-md flex flex-col justify-around items-center h-full p-3 rounded-lg shadow-md text-black !important">
       <span className="font-semibold">
         {time} {time >= "00" && time < "11" ? "AM" : "PM"}
       </span>

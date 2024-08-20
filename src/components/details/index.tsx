@@ -74,7 +74,7 @@ const Details = () => {
               Daily
             </button>
           </ButtonGroup>
-          <div className="info w-full h-[10rem] border border-blue-200 bg-white/80 backdrop-blur-md rounded-lg shadow-md overflow-hidden mt-4">
+          <div className="info w-full h-[10rem] border bg-white/10 backdrop-blur-md rounded-lg shadow-md overflow-hidden mt-4">
             {store.currentEleID === "hour" && (
               <div className="w-full flex h-full gap-2 p-2">
                 {forcastHour.map((item, index) => {
