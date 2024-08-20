@@ -14,6 +14,7 @@ export interface IPromise {
     conditionOutput: string,
     date: string,
     cityName: string,
+    countryName: string,
     icon: string,
     humidity: number,
     feelslike: number,

@@ -54,7 +54,7 @@ const Details = () => {
             <button
               onClick={(e) => store.getIdElement(e)}
               id="hour"
-              className={`text-sm px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition-colors duration-300 ${
+              className={`text-sm px-4 py-2 rounded-lg hover:bg-gray-500 hover:text-white transition-colors duration-300 ${
                 store.currentEleID === "hour"
                   ? "text-white bg-blue-600"
                   : "text-blue-600 bg-white"
@@ -78,7 +78,6 @@ const Details = () => {
             {store.currentEleID === "hour" && (
               <div className="w-full flex h-full gap-2 p-2">
                 {forcastHour.map((item, index) => {
-                  console.log('itemmmmmm',item.icon);
                   return (
                     <HourlyDetail
                     key={index}

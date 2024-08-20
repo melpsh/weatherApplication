@@ -31,10 +31,10 @@ const Main = () => {
           className="cityName text-center md:text-left mt-4 md:mt-0"
         >
           <h1 className="font-bold text-4xl md:text-5xl">
-            {store.weatherInfo?.cityName}
+            {store.weatherInfo?.cityName} , {store.weatherInfo?.countryName}
           </h1>
           <small className="flex justify-between text-sm md:text-base mt-2">
-            <span className="time">{time}</span>
+            <span className="time">Local time: {time}</span>
             <span className="date">
               {y}/{m}/{d} 
             </span>

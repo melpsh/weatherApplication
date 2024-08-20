@@ -80,24 +80,21 @@ const mainStore = create<IPromise>((set, getState) => ({
       const response = await axios.get(
         `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=3&aqi=no&alerts=no`
       );
+      console.log('ressss',response);
       const { data } = response;
       let contion = data.current.condition.code;
 
       let currentTimeInLocation = parseInt(
         data.location.localtime.slice(11, 13)
       );
+      console.log('aaaaaaaaaaaaaa',currentTimeInLocation);
       if (currentTimeInLocation > 19) {
-        const loggg = data.forecast.forecastday[1].hour[0];
-        console.log(loggg);
-        console.log('Starting map function');
         hoursDataForNextDay = data.forecast.forecastday[1].hour.map(
           (item: any) => {
-            console.log('Map function hit');
             let iconUrl = item.condition.icon;
             if (iconUrl.startsWith("//")) {
               iconUrl = `https:${iconUrl}`;
             }
-            console.log('Transformed Icon URL:', iconUrl);
             return {
               wind: item.wind_kph,
               time: item.time,
@@ -138,6 +135,7 @@ const mainStore = create<IPromise>((set, getState) => ({
         conditionOutput: data.current.condition.text,
         date: data.location.localtime,
         cityName: data.location.name,
+        countryName: data.location.country,
         icon: iconUrl,
         humidity: data.current.humidity,
         feelslike: data.current.feelslike_c,
