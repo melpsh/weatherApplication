@@ -14,7 +14,7 @@ import snowyNight from "/images/night/snowy.jpg";
 const mainStore = create<IPromise>((set, getState) => ({
   // vaiables
   weatherInfo: null,
-  cityLocation: "Tehran",
+  cityLocation: "Vancouver",
   inputCityLocation: "",
   urlImg: "",
   bgBlack: false,
